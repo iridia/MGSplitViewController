@@ -147,15 +147,23 @@
 
 - (void)dealloc
 {
+
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
 	_delegate = nil;
-	[self.masterViewController release];
-	[self.detailViewController release];
+	
+	//	These are unnecessary because _viewControllers, holding them, is released
+	//	[self.masterViewController release];
+	//	[self.detailViewController release];
+	
 	[self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 	[_viewControllers release];
 	[_barButtonItem release];
 	[_hiddenPopoverController release];
 	[_dividerView release];
 	[_cornerViews release];
+	
+	[pool drain];
 	
 	[super dealloc];
 }
