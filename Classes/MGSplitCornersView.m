@@ -43,6 +43,9 @@
 #pragma mark Geometry helpers
 
 
+double deg2Rad(double degrees);
+double rad2Deg(double radians);
+
 double deg2Rad(double degrees)
 {
 	// Converts degrees to radians.
