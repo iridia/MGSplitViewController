@@ -993,7 +993,7 @@
 - (UIViewController *)masterViewController
 {
 	if (_viewControllers && [_viewControllers count] > 0) {
-		NSObject *controller = [_viewControllers objectAtIndex:0];
+		UIViewController *controller = (UIViewController *)[_viewControllers objectAtIndex:0];
 		if ([controller isKindOfClass:[UIViewController class]]) {
 			return [[controller retain] autorelease];
 		}
@@ -1035,7 +1035,7 @@
 - (UIViewController *)detailViewController
 {
 	if (_viewControllers && [_viewControllers count] > 1) {
-		NSObject *controller = [_viewControllers objectAtIndex:1];
+		UIViewController *controller = (UIViewController *)[_viewControllers objectAtIndex:1];
 		if ([controller isKindOfClass:[UIViewController class]]) {
 			return [[controller retain] autorelease];
 		}
